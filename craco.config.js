@@ -1,17 +1,13 @@
-const CracoLessPlugin = require('craco-less');
+const cracoSassResourcesLoader = require('craco-sass-resources-loader')
+const path = require('path');
 
 module.exports = {
   plugins: [
-    {
-      plugin: CracoLessPlugin,
-      options: {
-        lessLoaderOptions: {
-          lessOptions: {
-            modifyVars: { '@primary-color': '#1DA57A' },
-            javascriptEnabled: true,
-          },
-        },
-      },
-    },
-  ],
+		{
+			plugin: cracoSassResourcesLoader,
+			options: {
+				resources: './src/App.scss'
+			}
+		}
+	]
 };
